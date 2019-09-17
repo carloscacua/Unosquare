@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TestUnosquere.View.CarrosPage">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Marca"></Label>
+            <Entry Text="{Binding Marca}"></Entry>
+            <Label Text="Modelo"></Label>
+            <Entry Text="{Binding Modelo}"></Entry>
+            <Label Text="Anio"></Label>
+            <Entry Text="{Binding Anio}" Keyboard="Numeric"></Entry>
+            <Button Text="Agregar" Command="{Binding GuardarCommando}"></Button>
+            
+            <ListView x:Name="LvCarros" ItemsSource="{Binding Carros}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DisplayName}" TextColor="Red"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
